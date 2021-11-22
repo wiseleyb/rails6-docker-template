@@ -24,6 +24,7 @@ services:
       - HISTFILE=/usr/src/app/.dockerdev/.bash_history
       - MALLOC_ARENA_MAX=2
       - REDIS_URL_CACHING=redis://redis:6379/0
+      - REDIS_URL_SIDEKIQ=redis://redis:6379/1
     volumes:
       - .:/usr/src/app/:cached
       - bundle:/usr/local/bundle
@@ -56,10 +57,21 @@ services:
       - '6379:6379'
     volumes:
       - 'redis:/data'
+  sidekiq:
+    depends_on:
+      - 'db'
+      - 'redis'
+    build: .
+    command: bundle exec sidekiq
+    volumes:
+      - .:/usr/src/app
+      - '/usr/src/app/tmp' # don't mount tmp directory
+    environment:
+      - REDIS_URL_SIDEKIQ=redis://redis:6379/1
 volumes:
   bundle:
   db_data:
   node_modules:
   rails_cache:
   packs:
-  redis:  
+  redis:

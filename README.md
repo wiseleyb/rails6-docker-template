@@ -11,8 +11,17 @@ So - if you just wanted docker with redis you could `git co my-custom-docker; gi
 
 # feature/redis
 
+Based on https://yizeng.me/2019/11/16/use-redis-for-caching-to-a-docker-compose-managed-rails-project/
+
 `ENV:REDIS_URL_CACHING` needs to be set when you deploy to point at whatever you're using for a redis store
 
+# feature/Sidekiq
+
+Based on https://yizeng.me/2019/11/17/add-sidekiq-to-a-docker-compose-managed-rails-project/
+
+Depends on feature/redis
+
+`ENV:REDIS_URL_SIDEKIQ` needs to be set for redis url
 
 # Original Doc follows
 

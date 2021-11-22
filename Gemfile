@@ -29,7 +29,10 @@ gem 'jbuilder', '~> 2.11'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Introduced in feature/redis
-gem 'redis' 
+gem 'redis'
+
+# Introduced in feature/sidekiq
+gem 'sidekiq'
 
 group :development, :test do
   gem 'bundle-audit'

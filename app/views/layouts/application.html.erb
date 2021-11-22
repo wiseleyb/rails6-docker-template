@@ -3,10 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
+
     <title>Railsondocker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <ul>
+      <% if current_user %>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete%></li>
+      <% else %>
+        <li><%= link_to 'Sign up', new_user_registration_path%></li>
+        <li><%= link_to 'Sign in', new_user_session_path%></li>
+      <% end %>
+    </ul>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

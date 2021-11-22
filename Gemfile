@@ -27,12 +27,14 @@ gem 'jbuilder', '~> 2.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
 # Introduced in feature/redis
 gem 'redis'
 
 # Introduced in feature/sidekiq
 gem 'sidekiq'
+
+# Introduced in feature/devise
+gem 'devise'
 
 group :development, :test do
   gem 'bundle-audit'

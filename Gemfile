@@ -36,6 +36,9 @@ gem 'sidekiq'
 # Introduced in feature/devise
 gem 'devise'
 
+# Introduced in feature/active-admin
+gem 'activeadmin'
+
 group :development, :test do
   gem 'bundle-audit'
   gem 'brakeman'

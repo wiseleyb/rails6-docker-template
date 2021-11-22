@@ -6,6 +6,8 @@ This project has various branches that add various features to docker Rails 6
 * `feature/everything`: contains all features below
 * `feature/base`: this is the base project which is just https://github.com/ryanwi/rails-on-docker
 * `feature/redis`: adds redis
+* `feature/devise`: adds despise-devise (still needs lots of work)
+* `feature/active-admin`: adds very basic activeadmin code (still needs cancan and admin_users should be mixed with users)
 
 So - if you just wanted docker with redis you could `git co my-custom-docker; git merge feature/base; git merge feature/redis`
 

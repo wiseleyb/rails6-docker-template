@@ -1,3 +1,21 @@
+# How to use this:
+
+This project has various branches that add various features to docker Rails 6
+
+* `main`: is just `feature/base`
+* `feature/everything`: contains all features below
+* `feature/base`: this is the base project which is just https://github.com/ryanwi/rails-on-docker
+* `feature/redis`: adds redis
+
+So - if you just wanted docker with redis you could `git co my-custom-docker; git merge feature/base; git merge feature/redis`
+
+# feature/redis
+
+`ENV:REDIS_URL_CACHING` needs to be set when you deploy to point at whatever you're using for a redis store
+
+
+# Original Doc follows
+
 # Rails 6 on Docker demo application
 
 ![Ruby](https://github.com/ryanwi/rails-on-docker/workflows/Ruby/badge.svg)

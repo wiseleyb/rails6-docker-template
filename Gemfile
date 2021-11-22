@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Introduced in feature/devise
 gem 'devise'
 
+# Introduced in feature/active-admin
+gem 'activeadmin'
+
 group :development, :test do
   gem 'bundle-audit'
   gem 'brakeman'

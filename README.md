@@ -45,6 +45,15 @@ docker compose run --rm web yarn upgrade
 docker compose up --build
 ```
 
+## To connect to the database in postico
+
+* stop postgres running locally on your box
+* host: 0.0.0.0
+* post: 5432
+* un: postgres
+* pw: changeme
+* db: {app_name}_development
+
 ## Credits/References
 
 * https://docs.docker.com/compose/rails/

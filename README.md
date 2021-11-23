@@ -54,6 +54,13 @@ docker compose up --build
 * pw: changeme
 * db: {app_name}_development
 
+## Debugging
+
+If you put a `byebug` in your code to debug with you need to do this:
+
+1) `docker container ls` - find the id for the `web` container
+2) `docker attach {container-id}`
+
 ## Credits/References
 
 * https://docs.docker.com/compose/rails/

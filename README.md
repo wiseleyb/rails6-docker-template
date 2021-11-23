@@ -1,3 +1,13 @@
+# Setup
+
+1. install (docker)[https://www.docker.com/get-started]
+2. clone `git clone https://github.com/wiseleyb/rails6-docker-template'
+3. `docker-compose build`
+4. `docker-compose run web bundle exec rake db:setup`
+5. `docker-compose run web bundle exec rake db:migrate`
+6. `docker-compose up`
+7. Go to `localhost:3000`
+
 # Rails 6 on Docker demo application
 
 ![Ruby](https://github.com/ryanwi/rails-on-docker/workflows/Ruby/badge.svg)

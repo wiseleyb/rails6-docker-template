@@ -74,6 +74,22 @@ docker compose run --rm web yarn upgrade
 docker compose up --build
 ```
 
+## To connect to the database in postico
+
+* stop postgres running locally on your box
+* host: 0.0.0.0
+* post: 5432
+* un: postgres
+* pw: changeme
+* db: {app_name}_development
+
+## Debugging
+
+If you put a `byebug` in your code to debug with you need to do this:
+
+1) `docker container ls` - find the id for the `web` container
+2) `docker attach {container-id}`
+
 ## Credits/References
 
 * https://docs.docker.com/compose/rails/

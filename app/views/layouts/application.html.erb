@@ -10,21 +10,42 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <ul>
-      <% if current_user %>
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete%></li>
-      <% else %>
-        <li><%= link_to 'Sign up', new_user_registration_path%></li>
-        <li><%= link_to 'Sign in', new_user_session_path%></li>
-      <% end %>
-      <li><%= link_to 'Admin', admin_dashboard_path%></li>
-    </ul>
+    <table>
+      <tr>
+        <th>Users</th>
+        <th>Admin Users</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <% if current_user %>
+              <li><%= link_to "Sign out #{current_user.name}",
+                destroy_user_session_path, method: :delete%></li>
+            <% else %>
+              <li><%= link_to 'Sign up', new_user_registration_path%></li>
+              <li><%= link_to 'Sign in', new_user_session_path%></li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <% if current_admin_user %>
+              <li><%= link_to "Sign out #{current_admin_user.email}",
+                destroy_admin_user_session_path, method: :delete%></li>
+              <li><%= link_to 'Admin', admin_dashboard_path%></li>
+            <% else %>
+              <li><%= link_to 'Sign in', new_admin_user_session_path%></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    </table>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      </head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+      <body>
+        <%= yield %>
+      </body>
+    </html>

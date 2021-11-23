@@ -38,6 +38,7 @@ gem 'devise'
 
 # Introduced in feature/active-admin
 gem 'activeadmin'
+gem 'cancancan'
 
 group :development, :test do
   gem 'bundle-audit'

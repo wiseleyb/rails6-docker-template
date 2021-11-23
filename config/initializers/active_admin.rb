@@ -54,7 +54,9 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  config.authentication_method = :authenticate_admin_user!
+  # config.authentication_method = :authenticate_admin_user!
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.on_unauthorized_access = :access_denied
 
   # == User Authorization
   #
@@ -150,7 +152,12 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_action :do_something_awesome
+  config.before_action do
+    # obviously don't do this if your active-admin page is open to the general
+    # public. but - if you're using this just for internal employess this is
+    # fine... assuming your employees won't be hacking you
+    params.permit!
+  end
 
   # == Attribute Filters
   #

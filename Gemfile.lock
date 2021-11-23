@@ -85,6 +85,7 @@ GEM
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
     byebug (11.1.3)
+    cancancan (3.3.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
@@ -303,6 +304,7 @@ DEPENDENCIES
   brakeman
   bundle-audit
   byebug
+  cancancan
   devise
   jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.8)

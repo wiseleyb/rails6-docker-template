@@ -104,6 +104,10 @@ GEM
     formtastic_i18n (0.7.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    graphiql-rails (1.8.0)
+      railties
+      sprockets-rails
+    graphql (1.12.21)
     has_scope (0.8.0)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
@@ -306,6 +310,8 @@ DEPENDENCIES
   byebug
   cancancan
   devise
+  graphiql-rails
+  graphql
   jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.8)
   pg (>= 0.18, < 2.0)
@@ -328,4 +334,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.31
+   2.2.32

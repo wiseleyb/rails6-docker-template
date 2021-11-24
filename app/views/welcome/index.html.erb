@@ -1,3 +1,31 @@
-<h1>Welcome</h1>
+<h1>Rails 6 Docker Project Template</h1>
 
-<%= link_to "Articles", articles_path %>
+<ul>
+  <li><%= link_to 'Demo model: Articles', articles_path %></li>
+  <li><%= link_to 'GQL', '/graphiql' %></li>
+  <li><%= link_to 'Sidekiq', '/sidekiq' %></li>
+  <li><%= link_to 'ActiveAdmin', '/admin' %></li>
+  <li>Redis</li>
+  <li>Devise</li>
+  <li>Postgres</li>
+</ul>
+
+<div>
+  <h1>GQL Examples</h1>
+  <pre>
+    {
+      testField
+    }
+  </pre>
+  <pre>
+    {
+      articles {
+        id
+        title
+        text
+        createdAt
+        updatedAt
+      }
+    }
+  </pre>
+</div>

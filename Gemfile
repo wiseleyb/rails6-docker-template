@@ -40,6 +40,9 @@ gem 'devise'
 gem 'activeadmin'
 gem 'cancancan'
 
+# Introduced in feature/gql
+gem 'graphql'
+
 group :development, :test do
   gem 'bundle-audit'
   gem 'brakeman'
@@ -62,3 +65,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'graphiql-rails', group: :development

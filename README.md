@@ -25,6 +25,12 @@ Depends on feature/redis
 
 `ENV:REDIS_URL_SIDEKIQ` needs to be set for redis url
 
+# feature/gql
+
+Based on https://evilmartians.com/chronicles/graphql-on-rails-1-from-zero-to-the-first-query
+
+Note: Generator `rails g graphql:object article`
+
 # Original Doc follows
 
 # Rails 6 on Docker demo application

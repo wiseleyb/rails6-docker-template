@@ -12,8 +12,11 @@ module Types
   class ArticleType < Types::BaseObject
     implements Types::RecordType
 
+    #belongs_to :user
+
     field :title, String, null: true
     field :text, String, null: true
+    field :user, UserType, null: false, description: 'The author'
 
     # Defined i RecordType
     #field :id, ID, null: false

@@ -27,8 +27,14 @@ gem 'jbuilder', '~> 2.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-# Introduced in feature/redis
-gem 'redis'
+# Introduced in feature/redis - updated in feature/gql
+gem 'connection_pool'
+gem 'hiredis'
+gem 'redis', :require => ['redis', 'redis/connection/hiredis']
+
+# Introduced in feature/gql
+# Pusher client
+gem 'pusher'
 
 # Introduced in feature/sidekiq
 gem 'sidekiq'

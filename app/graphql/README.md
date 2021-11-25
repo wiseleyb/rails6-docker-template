@@ -4,6 +4,8 @@ Based on articles:
 * https://evilmartians.com/chronicles/graphql-on-rails-1-from-zero-to-the-first-query
 * https://www.keypup.io/blog/graphql-the-rails-way-part-1-exposing-your-resources-for-querying
 * https://www.keypup.io/blog/graphql-the-rails-way-part-2-writing-standard-and-custom-mutations
+* https://www.keypup.io/blog/graphql-the-rails-way-part-3-subscriptions-with-websockets-via-pusher
+* https://pusher.com
 
 # Examples
 

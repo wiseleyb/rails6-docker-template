@@ -10,12 +10,6 @@ module Types
     # Automatically generate find and list queries for a given resource
     def self.resource(entity, **args)
       entity_type = "Types::#{entity.to_s.singularize.classify}Type".constantize
-      Rails.logger.info ''
-      Rails.logger.info '*' * 80
-      Rails.logger.info entity_type
-      Rails.logger.info args.to_yaml
-      Rails.logger.info '*' * 80
-      Rails.logger.info ''
 
       record_resolver = args.delete(:record_resolver) ||
                         Resolvers::RecordQuery.for(entity_type, **args)

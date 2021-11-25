@@ -111,6 +111,8 @@ GEM
     has_scope (0.8.0)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
+    hiredis (0.6.3)
+    httpclient (2.8.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.13.0)
@@ -150,6 +152,7 @@ GEM
     mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_json (1.15.0)
     nio4r (2.5.8)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
@@ -168,6 +171,11 @@ GEM
       pry (>= 0.10.4)
     puma (5.5.2)
       nio4r (~> 2.0)
+    pusher (2.0.2)
+      httpclient (~> 2.8)
+      multi_json (~> 1.15)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     racc (1.6.0)
     rack (2.2.3)
     rack-mini-profiler (2.3.3)
@@ -309,14 +317,17 @@ DEPENDENCIES
   bundle-audit
   byebug
   cancancan
+  connection_pool
   devise
   graphiql-rails
   graphql
+  hiredis
   jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.8)
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 5.5)
+  pusher
   rack-mini-profiler (~> 2.3)
   rails (~> 6.1.4)
   redis

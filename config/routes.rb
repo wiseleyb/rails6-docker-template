@@ -15,5 +15,11 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  #------------------------------------------
+  # Pusher Controller
+  #------------------------------------------
+  post 'pusher/auth' => 'pusher#auth'
+  post 'pusher/webhooks' => 'pusher#webhooks'
+  
   root 'welcome#index'
 end

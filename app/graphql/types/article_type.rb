@@ -10,10 +10,14 @@ module Types
   #  }
   # }
   class ArticleType < Types::BaseObject
-    field :id, ID, null: false
+    implements Types::RecordType
+
     field :title, String, null: true
     field :text, String, null: true
-    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+    # Defined i RecordType
+    #field :id, ID, null: false
+    #field :created_at, GraphQL::Types::ISO8601DateTime, null: false
+    #field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end
 end

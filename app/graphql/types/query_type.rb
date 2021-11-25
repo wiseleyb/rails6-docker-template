@@ -14,13 +14,16 @@ module Types
       "Hello World!"
     end
 
-    field :articles,
-      [Types::ArticleType],
-      null: false,
-      description: 'Returns a list of articles'
+    field :me,
+          Types::UserType,
+          null: false,
+          description: 'Currently logged in user'
 
-    def articles
-      Article.all
+    def me
+      context[:current_user]
     end
+
+    resource :articles
+    resource :users
   end
 end

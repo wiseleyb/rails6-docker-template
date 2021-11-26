@@ -27,6 +27,27 @@ gem 'jbuilder', '~> 2.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+# Introduced in feature/redis - updated in feature/gql
+gem 'connection_pool'
+gem 'hiredis'
+gem 'redis', :require => ['redis', 'redis/connection/hiredis']
+
+# Introduced in feature/gql
+# Pusher client
+gem 'pusher'
+
+# Introduced in feature/sidekiq
+gem 'sidekiq'
+
+# Introduced in feature/devise
+gem 'devise'
+
+# Introduced in feature/active-admin
+gem 'activeadmin'
+gem 'cancancan'
+
+# Introduced in feature/gql
+gem 'graphql'
 
 group :development, :test do
   gem 'bundle-audit'
@@ -50,3 +71,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'graphiql-rails', group: :development

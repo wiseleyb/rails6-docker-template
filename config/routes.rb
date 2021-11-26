@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'welcome/index'
+  get 'welcome/react'
 
   resources :articles
 
@@ -20,6 +21,6 @@ Rails.application.routes.draw do
   #------------------------------------------
   post 'pusher/auth' => 'pusher#auth'
   post 'pusher/webhooks' => 'pusher#webhooks'
-  
+
   root 'welcome#index'
 end

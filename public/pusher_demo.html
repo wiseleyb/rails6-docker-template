@@ -1,0 +1,66 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<head>
+  <title>GraphQL + Pusher Test</title>
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    // Build pusher client
+    const pusher = new Pusher('SNZOd57pK4jG9zcVrcCoCCxqVlATywz_B0sf0RqWbcI',
+                              { cluster: 'us' });
+
+    // Subscription query options
+    const bookId = 1;
+    const options = {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `subscription($articleId: ID!) {
+                  articleUpdated(id: $articleId) {
+                    article {
+                      id
+                      title
+                      text
+                      user {
+                        name
+                      }
+                    }
+                  }
+                }`,
+        variables: { bookId: bookId }
+      })
+    };
+
+    // Register GraphQL subscription and subscribe to Pusher channel
+    fetch('/graphql', options)
+      .then(res => {
+        const pusherChannel = res.headers.get('X-Subscription-Channel');
+
+        // Subscribe to subscription channel
+        const channel = pusher.subscribe(pusherChannel);
+
+        // GraphQL updates are configured to be sent as 'update' events on Pusher
+        channel.bind('update', function(data) {
+          // Prepend update in update container
+          const container = document.getElementById('update-container');
+          const elem = document.createElement("li");
+          elem.innerHTML = `${(new Date()).toISOString()} => <code>${JSON.stringify(data)}</code>`
+          container.prepend(elem)
+        });
+      });
+  </script>
+</head>
+<body>
+  <h1>GraphQL subscription test</h1>
+  <p>
+    Use the Rails console to update Book(id = 1)<br/><br/>
+    <code>Book.find(1).tap { |b| b.update(pages: b.pages + 1) }</code>
+  </p>
+  <div style="border-top: solid 1px #bbb;">
+    <h3>Updates:</h3>
+    <ul id="update-container" style="margin-top:20px; list-style: none; padding-left: 15px;"></ul>
+  </div>
+</body>

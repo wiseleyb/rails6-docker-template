@@ -76,6 +76,8 @@ docker compose run --rm web bin/rails db:setup
 docker compose up
 ```
 
+You can now hit the app on [http://localhost:3000](http://localhost:3000)
+
 ## Running the Rails console
 When the app is already running with `docker-compose` up, attach to the container:
 ```

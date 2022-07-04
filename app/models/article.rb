@@ -4,8 +4,8 @@ class Article < ApplicationRecord
   scope :graphql_scope, -> { eager_load(:user) }
 
   # GraphQL subscription callbacks
-  after_update_commit :notify_graphql_of_update
-  after_destroy_commit :notify_graphql_of_delete
+  # after_update_commit :notify_graphql_of_update
+  # after_destroy_commit :notify_graphql_of_delete
 
   #
   # Return the full GraphQL event name.

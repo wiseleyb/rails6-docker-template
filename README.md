@@ -78,6 +78,12 @@ docker compose up
 
 You can now hit the app on [http://localhost:3000](http://localhost:3000)
 
+## Restart 
+```
+docker compose down
+docker compose up
+```
+
 ## Running the Rails console
 When the app is already running with `docker-compose` up, attach to the container:
 ```
@@ -87,6 +93,17 @@ docker compose exec web bin/rails c
 When no container running yet, start up a new one:
 ```
 docker compose run --rm web bin/rails c
+```
+
+## Running other things
+Any rails command:
+```
+docker compose exec web bin/rails generate (contoller|migration|etc)
+```
+
+Rake:
+```
+docker compose exec web bin/rake db:migrate
 ```
 
 ## Running tests
